@@ -26,3 +26,12 @@
 | POST    | urlbase/users/songs| Agrega una canción favorita al usuario        |
 | DELETE  | urlbase/users/songs| Elimina una canción de favoritos del usuario  |
 
+###Formato Json
+
+`{
+ "name": "example name",
+ "album": "example album",
+ "duration": “example duration”,
+"artist": "example artist",
+},`
+
