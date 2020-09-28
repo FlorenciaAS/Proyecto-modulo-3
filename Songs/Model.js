@@ -14,7 +14,13 @@ var Song = mongoose.model('Proyecto-mod3', songsSchema, 'songs');
 async function getAllSongs(){
     return await Song.find({});
 };
+
+async function addSongs(song){
+    var newSong= new Song(song);
+    await newSong.save();
+};
+
 module.exports={
     getAllSongs,
-
+    addSongs,
 }

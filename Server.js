@@ -12,7 +12,9 @@ mongoose.connect('mongodb+srv://Florencia-Alcaide:212487aa@prueba-db.kk1ln.mongo
  console.log('anda el puerto 4300');
 
 //songs
-server.get('/songs/', songsRoute.getSongs)
+server.get('/songs/', songsRoute.getSongs);
+server.post('/songs/', songsRoute.postSong);
+
 
 //users
-
+//server.get('/users/', userRoute.getUsers);
