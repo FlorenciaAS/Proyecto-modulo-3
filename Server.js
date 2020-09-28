@@ -13,8 +13,11 @@ mongoose.connect('mongodb+srv://Florencia-Alcaide:212487aa@prueba-db.kk1ln.mongo
 
 //songs
 server.get('/songs/', songsRoute.getSongs);
+//server.get('/song/:name/', songsRoute.getSongByName);
 server.post('/songs/', songsRoute.postSong);
 
 
+
 //users
-//server.get('/users/', userRoute.getUsers);
+server.get('/users/', userRoute.getUsers);
+server.post('/users/', userRoute.postUser);

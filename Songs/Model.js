@@ -9,7 +9,7 @@ var songsSchema = new Schema({
     artist: String
 });
 
-var Song = mongoose.model('Proyecto-mod3', songsSchema, 'songs');
+var Song = mongoose.model('Song', songsSchema);
 
 async function getAllSongs(){
     return await Song.find({});
@@ -23,4 +23,5 @@ async function addSongs(song){
 module.exports={
     getAllSongs,
     addSongs,
+    Song
 }
