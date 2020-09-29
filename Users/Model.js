@@ -25,7 +25,6 @@ async function addUsers(user){
 };
 
 
-
 async function deleteOneUser (nameUser){
     return await User.findOneAndDelete({name:nameUser});
 };
@@ -35,10 +34,24 @@ async function putOneUser (nameUser, body){
    return await User.findOneAndUpdate(nameUser, body);
 };
 
+async function addOneSongFavorite (nameUser, bodySong){
+    const user =  await User.findOne({name: nameUser});
+    user.favoriteSongs.push(bodySong);
+    await user.save();
+};
+
+async function deleteOneSongFavorite (nameUser, bodySong){
+    const user = await User.findOneAndDelete({name: nameUser});
+    user.favoriteSongs.
+    await user.save();
+};
+
 module.exports={
     getAllUsers, 
     addUsers,
     User,
     deleteOneUser,
-    putOneUser
+    putOneUser,
+    addOneSongFavorite,
+    deleteOneSongFavorite
 };

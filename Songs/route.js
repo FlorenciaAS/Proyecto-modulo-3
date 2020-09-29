@@ -7,7 +7,7 @@ const controller = require('./controller.js');
         res.status(200).send(songs);
         }
     catch(e){
-        res.status(500).send('hubo un error' + e);
+        res.status(500).send('hubo un error al mostrar la lista de canciones' + e);
     }
 };
 
@@ -15,9 +15,9 @@ const controller = require('./controller.js');
 async function postSong (req,res){
     try{
         await controller.addSong(req.body);
-        res.status(201).send('se aregó la cancion');
+        res.status(201).send('se aregó la canción');
     }catch(e){
-        res.send('hubo un error al agregar la cancion'+ e);
+        res.send('hubo un error al agregar la canción'+ e);
     }
 };
 
@@ -26,9 +26,9 @@ async function deleteSong (req,res){
     try{
         const nameSong = req.params.name;
        await controller.deleteSong(nameSong);
-        res.status(201).send('se elimino la cancion');
+        res.status(201).send('se eliminó la canción');
     }catch(e){
-        res.status(500).send('hubo un error al eliminar la cancion'+ e)
+        res.status(500).send('hubo un error al eliminar la canción'+ e)
     }
 };
 
@@ -38,9 +38,9 @@ async function putSong (req,res){
         var nameSongs=req.params.name;
         var body = req.body;
         await controller.putSong(nameSongs,body );
-        res.status(201).send('se modifico la cancion');
+        res.status(201).send('se modificó la canción');
     }catch(e){
-        res.send('hubo un error al modificar la cancion'+ e)
+        res.send('hubo un error al modificar la canción'+ e)
     }
 }
 
