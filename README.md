@@ -23,8 +23,8 @@
 
 | Método  | Referencia         | Propósito                                     |
 | ------- |:-----------------: |:---------------------------------------------:|
-| POST    | urlbase/users/songs| Agrega una canción favorita al usuario        |
-| DELETE  | urlbase/users/songs| Elimina una canción de favoritos del usuario  |
+| POST    | urlbase/users/songs/:userName| Agrega una canción favorita al usuario        |
+| DELETE  | urlbase/users/songs/:userName| Elimina una canción de favoritos del usuario  |
 
 ### Formato Json
 
