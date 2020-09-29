@@ -25,7 +25,20 @@ async function addUsers(user){
 };
 
 
+
+async function deleteOneUser (nameUser){
+    return await User.findOneAndDelete({name:nameUser});
+};
+
+
+async function putOneUser (nameUser, body){
+   return await User.findOneAndUpdate(nameUser, body);
+};
+
 module.exports={
     getAllUsers, 
-    addUsers
+    addUsers,
+    User,
+    deleteOneUser,
+    putOneUser
 };

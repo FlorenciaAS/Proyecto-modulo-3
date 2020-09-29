@@ -8,16 +8,23 @@ mongoose.connect('mongodb+srv://Florencia-Alcaide:212487aa@prueba-db.kk1ln.mongo
 
  var server = express();
  server.use(express.json());
- server.listen(4300);
- console.log('anda el puerto 4300');
+ server.listen(3000);
+ console.log('Funciona el puerto 4300');
 
-//songs
-server.get('/songs/', songsRoute.getSongs);
-//server.get('/song/:name/', songsRoute.getSongByName);
-server.post('/songs/', songsRoute.postSong);
+//SONGS
+server.get('/songs', songsRoute.getSongs);
+server.post('/songs', songsRoute.postSong);
+server.delete('/songs/:name',songsRoute.deleteSong);
+server.put('/songs/:name', songsRoute.putSong);
 
 
 
-//users
-server.get('/users/', userRoute.getUsers);
-server.post('/users/', userRoute.postUser);
+//USERS
+server.get('/users', userRoute.getUsers);
+server.post('/users', userRoute.postUser);
+server.delete('/users/:name',userRoute.deleteUser);
+server.put('/users/:name', userRoute.putUser);
+
+//FAVORITE SONGS
+server.post('/users/:users/songs',userRoute.addSongFavorite);
+//server.delete('/users/:users/songs', userRoute.deleteSongFavorite);

@@ -20,8 +20,22 @@ async function addSongs(song){
     await newSong.save();
 };
 
+
+async function deleteOneSong (nameSong){
+     return await Song.findOneAndDelete({name:nameSong});
+};
+
+
+async function putOneSong (nameSong, body){
+    return await Song.findOneAndUpdate(nameSong, body);
+};
+
+
 module.exports={
     getAllSongs,
     addSongs,
-    Song
+    Song,
+    deleteOneSong,
+    putOneSong
+    
 }

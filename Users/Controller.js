@@ -9,7 +9,23 @@ async function addUser(user){
 };
 
 
+async function deleteUser(nameUser){
+    return await model.deleteOneUser(nameUser);
+};
+
+async function putUser(nameUser, body){
+    return await model.putOneUser(nameUser, body);
+};
+
+async function addSongFavorite (){
+
+};
+
+
 module.exports ={
     findAllUsers,
-    addUser
+    addUser,
+    deleteUser,
+    putUser,
+    addSongFavorite
 };
