@@ -21,8 +21,8 @@ async function addSongFavorite (nameUser,bodySong){
 
 };
 
-async function deleteSongFavorite (nameUser, body){
-    return await model.deleteOneSongFavorite(nameUser, body);
+async function deleteSongFavorite (nameUser, bodySong){
+    return await model.deleteOneSongFavorite(nameUser, bodySong);
 };
 
 module.exports ={

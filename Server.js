@@ -8,8 +8,8 @@ mongoose.connect('mongodb+srv://Florencia-Alcaide:212487aa@prueba-db.kk1ln.mongo
 
  var server = express();
  server.use(express.json());
- server.listen(3000);
- console.log('Funciona el puerto 3000');
+ server.listen(3200);
+ console.log('Funciona el puerto 3200');
 
 //SONGS
 server.get('/songs', songsRoute.getSongs);
@@ -25,7 +25,7 @@ server.put('/users/:name', userRoute.putUser);
 
 //FAVORITE SONGS
 server.post('/users/songs/:userName/',userRoute.addSongFavorite);
-server.delete('/users/:name/songs', userRoute.deleteSongFavorite);
+server.delete('/users/:songs/:userName', userRoute.deleteSongFavorite);
 
 
 

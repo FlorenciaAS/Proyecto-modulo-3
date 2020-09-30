@@ -61,7 +61,7 @@ async function addSongFavorite (req,res){
 async function deleteSongFavorite (req, res){
     try{
         var nameUser= req.params.userName;
-        var bodySong= req.body;
+        var bodySong= req.params.songs;
         await controller.deleteSongFavorite(nameUser, bodySong);
         res.status(201).send('se eliminó la canción a favoritos del usuario');
     }catch(e){
