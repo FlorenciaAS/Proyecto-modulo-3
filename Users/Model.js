@@ -19,7 +19,7 @@ async function getAllUsers(){
 };
 
 async function getOneUser(nameUser){
-    return await User.find({name: nameUser});
+    return await User.find({name: nameUser}).populate('favoriteSongs');
 };
 
 async function addUsers(user){
