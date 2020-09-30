@@ -27,7 +27,7 @@ server.put('/users/:name', userRoute.putUser);
 
 //FAVORITE SONGS
 server.post('/users/songs/:userName/',userRoute.addSongFavorite);
-server.delete('/users/:songs/:userName', userRoute.deleteSongFavorite);
+server.delete('/users/:songName/:userName', userRoute.deleteSongFavorite);
 
 
 

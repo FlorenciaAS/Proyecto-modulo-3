@@ -61,7 +61,7 @@ async function addSongFavorite (req,res){
     try{
       var nameUser= req.params.userName;
       var bodySong= req.body;
-      console.log('id de cancion' + bodySong)
+      console.log('id de cancion ' + bodySong)
       await controller.addSongFavorite(nameUser, bodySong);
       res.status(201).send('se agrego la canción a favoritos del usuario');
     }catch(e){
@@ -73,8 +73,9 @@ async function addSongFavorite (req,res){
 async function deleteSongFavorite (req, res){
     try{
         var nameUser= req.params.userName;
-        var bodySong= req.params.songs;
-        await controller.deleteSongFavorite(nameUser, bodySong);
+        var nameSong= req.params.songName;
+        console.log('id de cancion ' + nameSong);
+        await controller.deleteSongFavorite(nameSong, nameUser);
         res.status(201).send('se eliminó la canción a favoritos del usuario');
     }catch(e){
         res.send('hubo un error al eliminar la canción a favoritos del usuario' + e);
