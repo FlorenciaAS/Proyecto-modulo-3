@@ -4,6 +4,10 @@ async function findAllUsers(){
     return await model.getAllUsers();
 };
 
+async function findUser (nameOneUser){
+    return await model.getOneUser(nameOneUser);
+};
+
 async function addUser(user){
     return await model.addUsers(user);
 };
@@ -27,6 +31,7 @@ async function deleteSongFavorite (nameUser, bodySong){
 
 module.exports ={
     findAllUsers,
+    findUser,
     addUser,
     deleteUser,
     putUser,

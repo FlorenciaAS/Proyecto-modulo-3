@@ -18,6 +18,9 @@ async function getAllUsers(){
     return await User.find({}).populate('favoriteSongs');
 };
 
+async function getOneUser(nameUser){
+    return await User.find({name: nameUser});
+};
 
 async function addUsers(user){
     var newUser= new User(user);
@@ -47,7 +50,8 @@ async function deleteOneSongFavorite (nameUser, bodySong){
 };
 
 module.exports={
-    getAllUsers, 
+    getAllUsers,
+    getOneUser, 
     addUsers,
     User,
     deleteOneUser,

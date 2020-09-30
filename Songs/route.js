@@ -11,6 +11,17 @@ const controller = require('./controller.js');
     }
 };
 
+//mostrar canción por nombre
+async function getSongByName (req,res){
+    try{
+        const nameOneSong = req.params.name;
+        const oneSong = await controller.findSong(nameOneSong);
+        res.status(201).send(oneSong);
+    }catch(e){
+        res.status(500).send('hubo un error al mostrar la canción'+ e)
+    }
+};
+
 //agregar una cancion a la lista
 async function postSong (req,res){
     try{
@@ -47,6 +58,7 @@ async function putSong (req,res){
 
 module.exports={
     getSongs,
+    getSongByName,
     postSong,
     deleteSong,
     putSong

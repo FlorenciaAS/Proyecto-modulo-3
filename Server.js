@@ -13,12 +13,14 @@ mongoose.connect('mongodb+srv://Florencia-Alcaide:212487aa@prueba-db.kk1ln.mongo
 
 //SONGS
 server.get('/songs', songsRoute.getSongs);
+server.get('/songs/:name', songsRoute.getSongByName);
 server.post('/songs', songsRoute.postSong);
 server.delete('/songs/:name',songsRoute.deleteSong);
 server.put('/songs/:name', songsRoute.putSong);
 
 //USERS
 server.get('/users', userRoute.getUsers);
+server.get('/users/:name', userRoute.getUserByName);
 server.post('/users', userRoute.postUser);
 server.delete('/users/:name',userRoute.deleteUser);
 server.put('/users/:name', userRoute.putUser);

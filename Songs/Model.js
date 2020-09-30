@@ -15,6 +15,10 @@ async function getAllSongs(){
     return await Song.find({});
 };
 
+async function getOneSong(nameSong){
+    return await Song.find({name: nameSong});
+};
+
 async function addSongs(song){
     var newSong= new Song(song);
     await newSong.save();
@@ -33,6 +37,7 @@ async function putOneSong (nameSong, body){
 
 module.exports={
     getAllSongs,
+    getOneSong,
     addSongs,
     Song,
     deleteOneSong,

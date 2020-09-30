@@ -1,3 +1,4 @@
+const { findUser } = require('./Controller.js');
 const controller = require('./Controller.js');
 
 //mostrar toda la lista de usuarios
@@ -8,6 +9,17 @@ async function getUsers (req,res){
         }
     catch(e){
         res.status(500).send('hubo un error al mostrar la lista de usuarios' + e);
+    }
+};
+
+//mostrar usuario por nombre
+async function getUserByName (req,res){
+    try{
+        const nameOneUser = req.params.name;
+        const oneUser = await controller.findUser(nameOneUser);
+        res.status(201).send(oneUser);
+    }catch(e){
+        res.status(500).send('hubo un error al mostrar el usuario'+ e)
     }
 };
 
@@ -69,11 +81,12 @@ async function deleteSongFavorite (req, res){
     }
 };
 
-module.exports={
+module.exports= {
     getUsers,
+    getUserByName,
     postUser,
     deleteUser,
     putUser,
     addSongFavorite,
     deleteSongFavorite
-};
+}
