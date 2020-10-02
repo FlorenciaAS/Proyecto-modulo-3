@@ -1,0 +1,26 @@
+{
+  "name": "proyecto-modulo-3-alcaideflorencia",
+  "version": "1.0.0",
+  "description": "| Método  | Referencia         | Propósito                                     |\r | ------- |:-----------------: |:---------------------------------------------:|\r | GET     | urlbase/songs      | Devuelve todas las canciones                  |\r | GET     | urlbase/songs/name | Devuelve la canción con ese nombre            |\r | POST    | urlbase/songs      | Agrega una canción en el body en formato Json |\r | DELETE  | urlbase/songs/name | Elimina una canción si existe                 |\r | PUT     | urlbase/songs/name | Modifica una canción                          |",
+  "main": "Server.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.10.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FlorenciaAS/Proyecto-modulo-3-AlcaideFlorencia.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FlorenciaAS/Proyecto-modulo-3-AlcaideFlorencia/issues"
+  },
+  "homepage": "https://github.com/FlorenciaAS/Proyecto-modulo-3-AlcaideFlorencia#readme"
+}

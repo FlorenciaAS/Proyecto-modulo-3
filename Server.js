@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const songsRoute = require('./Songs/route.js');
 const userRoute = require('./Users/Route.js');
 const mongoose = require('mongoose');
@@ -6,10 +7,12 @@ const mongoose = require('mongoose');
 mongoose.connect('mongodb+srv://Florencia-Alcaide:212487aa@prueba-db.kk1ln.mongodb.net/Proyecto-mod3?retryWrites=true&w=majority',
  {useNewUrlParser: true, useUnifiedTopology: true});
 
+
  var server = express();
  server.use(express.json());
  server.listen(process.env.PORT);
  console.log('Funciona el puerto 3200');
+ server.use(cors());
 
 //SONGS
 server.get('/songs', songsRoute.getSongs);
