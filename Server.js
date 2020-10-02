@@ -8,7 +8,7 @@ mongoose.connect('mongodb+srv://Florencia-Alcaide:212487aa@prueba-db.kk1ln.mongo
 
  var server = express();
  server.use(express.json());
- server.listen(3200);
+ server.listen(process.env.PORT);
  console.log('Funciona el puerto 3200');
 
 //SONGS

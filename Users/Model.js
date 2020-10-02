@@ -45,7 +45,7 @@ async function addOneSongFavorite (nameUser, bodySong){
 
 async function deleteOneSongFavorite (nameSong, nameUser){
     const user = await User.findOne({name: nameUser});
-    user.favoriteSongs.remove(nameSong);
+    user.favoriteSongs.delete(nameSong);
     await user.save();
 };
 
