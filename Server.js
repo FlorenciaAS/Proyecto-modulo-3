@@ -8,7 +8,7 @@ mongoose.connect('mongodb+srv://Florencia-Alcaide:212487aa@prueba-db.kk1ln.mongo
  {useNewUrlParser: true, useUnifiedTopology: true});
 
 
- var server = express();
+ const server = express();
  server.use(express.json());
  server.listen(process.env.PORT);
  console.log('Funciona el puerto 3200');
@@ -31,7 +31,6 @@ server.put('/users/:name', userRoute.putUser);
 //FAVORITE SONGS
 server.post('/users/songs/:userName/',userRoute.addSongFavorite);
 server.delete('/users/:songName/:userName', userRoute.deleteSongFavorite);
-
 
 
 //pasar id de esta manera: ["5f6ce0cad688103138c75a0b"]
